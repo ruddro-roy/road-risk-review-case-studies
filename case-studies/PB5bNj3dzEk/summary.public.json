@@ -1,0 +1,17 @@
+{
+  "video_id": "PB5bNj3dzEk",
+  "title": "Motorbike low-side (helmet-mounted camera)",
+  "duration_s": 10.9,
+  "conflict_s": 8.467,
+  "fusion_onset_s": 3.067,
+  "peak_risk": 0.971,
+  "advance_warning": null,
+  "imminent_warning": {"start_s": 6.467, "end_s": 8.467},
+  "phases": [
+    {"kind": "pre_conflict", "start_s": 1.0, "end_s": 8.467},
+    {"kind": "conflict", "start_s": 8.467, "end_s": 8.467},
+    {"kind": "post_impact", "start_s": 8.467, "end_s": 10.867}
+  ],
+  "source_url": "https://www.youtube.com/watch?v=PB5bNj3dzEk",
+  "disclaimer": "Research demo. Human review required. Not collision prevention."
+}

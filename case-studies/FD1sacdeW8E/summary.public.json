@@ -1,0 +1,17 @@
+{
+  "video_id": "FD1sacdeW8E",
+  "title": "Dashcam T-bone (ViralHog)",
+  "duration_s": 38.533,
+  "conflict_s": 32.5,
+  "fusion_onset_s": 1.0,
+  "peak_risk": 0.958,
+  "advance_warning_lead_s": 0.6,
+  "advance_warning_band": "moderate",
+  "phases": [
+    {"kind": "pre_conflict", "start_s": 31.9, "end_s": 32.5},
+    {"kind": "conflict", "start_s": 32.5, "end_s": 32.5},
+    {"kind": "post_impact", "start_s": 32.5, "end_s": 38.5}
+  ],
+  "source_url": "https://www.youtube.com/watch?v=FD1sacdeW8E",
+  "disclaimer": "Research demo. Human review required. Not collision prevention."
+}
