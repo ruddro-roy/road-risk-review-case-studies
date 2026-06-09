@@ -1,6 +1,6 @@
 # Incident case studies
 
-Two public clips with frame-labeled proof video. Research demo. Human review required. Not a benchmark.
+Two segments from public YouTube uploads, used for educational research demonstration. Frame-labeled proof video. Human review required. Not a benchmark. Source detail: [SOURCE.md](SOURCE.md).
 
 Timings match the labels burned into each proof export at container FPS.
 

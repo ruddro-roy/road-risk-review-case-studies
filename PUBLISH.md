@@ -12,7 +12,7 @@ Local notes for syncing this public repo from the private `road-risk-review` pro
 
 ## Last published
 
-- Date: 2026-06-09
+- Date: 2026-06-09 (SOURCE.md added same day)
 - Clips: FD1sacdeW8E, PB5bNj3dzEk
 - Source commit (private): dcdb9c2 (proprietary license)
 - Verification snapshot: 2026-06-04 quick gate PASS

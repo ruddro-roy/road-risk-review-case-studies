@@ -1,8 +1,8 @@
 # road-risk-review case studies
 
-Public proof for road-risk-review: assistive review on recorded dashcam and helmet-camera footage. Two worked examples on publicly available clips. Not ADAS. Not collision avoidance. Human review required.
+Public proof for road-risk-review: assistive review on recorded dashcam and helmet-camera footage. Two worked examples built from publicly available YouTube clips, used for educational research demonstration only. Not ADAS. Not collision avoidance. Human review required.
 
-Read [limitations.md](limitations.md) before interpreting any output.
+Source and rights: [SOURCE.md](SOURCE.md). Caveats: [limitations.md](limitations.md).
 
 ## Case studies
 
@@ -27,4 +27,4 @@ High-level overview only: [architecture-overview.md](architecture-overview.md)
 
 ## Terms
 
-[NOTICE.md](NOTICE.md)
+[SOURCE.md](SOURCE.md) | [NOTICE.md](NOTICE.md)
