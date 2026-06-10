@@ -14,6 +14,6 @@ The reference timing comes from the analytic scene geometry. It is useful for ch
 
 ## Current reading
 
-The timing run detects all seven contact scenarios with a mean absolute conflict-time error of 0.194 s on this controlled set. It also flags both pedestrian near-miss scenarios as conflicts. That is an exposed limitation, not a product claim.
+Measured 2026-06-10 on controlled-scenarios-v1, nine clips. The timing run detects all seven contact scenarios with a mean absolute conflict-time error of 0.194 s on this controlled set. It also flags both pedestrian near-miss scenarios as conflicts. That is an exposed limitation, not a product claim.
 
 These files are public proof artifacts only. They do not expose the private implementation.
