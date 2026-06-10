@@ -17,6 +17,10 @@ Each folder contains frame-labeled proof video (MP4 and GIF), timeline chart, se
 
 HD proof MP4s are included. GitHub may not preview files over ~2 MB inline; download or open raw to view the full run.
 
+## Controlled scenarios
+
+A small deterministic scenario set is published as an evaluation aid for conflict timing and false-conflict behavior: [controlled-scenarios/](controlled-scenarios/). It is not real-world validation.
+
 ## Evaluation
 
 Regression gate for these two clips: [evaluation/verification-summary.md](evaluation/verification-summary.md)

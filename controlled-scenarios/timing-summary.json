@@ -1,0 +1,101 @@
+{
+  "mode": "controlled_kinematic_scenarios",
+  "description": "Deterministic rendered road scenarios with analytic reference timing.",
+  "clips": 9,
+  "reference_conflicts": 7,
+  "detected_conflicts": 9,
+  "mean_abs_conflict_error_s": 0.194,
+  "false_conflicts": 2,
+  "results": [
+    {
+      "clip_id": "lead_brake_a5.mp4",
+      "reference_conflict_s": 4.801,
+      "detected_conflict_s": 4.667,
+      "conflict_error_s": -0.134,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 4
+    },
+    {
+      "clip_id": "lead_brake_a7.mp4",
+      "reference_conflict_s": 4.404,
+      "detected_conflict_s": 4.167,
+      "conflict_error_s": -0.237,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 3
+    },
+    {
+      "clip_id": "lead_brake_a7_night.mp4",
+      "reference_conflict_s": 4.404,
+      "detected_conflict_s": 4.0,
+      "conflict_error_s": -0.404,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 7
+    },
+    {
+      "clip_id": "ped_collision_40kmh.mp4",
+      "reference_conflict_s": 4.894,
+      "detected_conflict_s": 4.833,
+      "conflict_error_s": -0.061,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 2
+    },
+    {
+      "clip_id": "ped_near_miss_40kmh.mp4",
+      "reference_conflict_s": null,
+      "detected_conflict_s": 4.667,
+      "conflict_error_s": null,
+      "first_alert_s": 0.0,
+      "reference_has_contact": false,
+      "false_conflict": true,
+      "events": 5
+    },
+    {
+      "clip_id": "ped_near_miss_40kmh_dusk.mp4",
+      "reference_conflict_s": null,
+      "detected_conflict_s": 4.5,
+      "conflict_error_s": null,
+      "first_alert_s": 0.0,
+      "reference_has_contact": false,
+      "false_conflict": true,
+      "events": 8
+    },
+    {
+      "clip_id": "t_bone_30kmh.mp4",
+      "reference_conflict_s": 5.805,
+      "detected_conflict_s": 5.667,
+      "conflict_error_s": -0.138,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 2
+    },
+    {
+      "clip_id": "t_bone_45kmh.mp4",
+      "reference_conflict_s": 5.845,
+      "detected_conflict_s": 5.667,
+      "conflict_error_s": -0.178,
+      "first_alert_s": 0.0,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 3
+    },
+    {
+      "clip_id": "t_bone_60kmh.mp4",
+      "reference_conflict_s": 5.874,
+      "detected_conflict_s": 5.667,
+      "conflict_error_s": -0.207,
+      "first_alert_s": 5.25,
+      "reference_has_contact": true,
+      "false_conflict": false,
+      "events": 3
+    }
+  ]
+}
