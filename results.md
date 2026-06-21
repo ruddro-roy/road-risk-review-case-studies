@@ -14,9 +14,7 @@ Conflict **32.50 s** | duration **38.53 s** | peak risk **0.96** | advance ~**0.
 
 ![Animated proof](case-studies/FD1sacdeW8E/detection_proof.gif)
 
-<video controls width="854" poster="case-studies/FD1sacdeW8E/proof_poster.jpg">
-  <source src="case-studies/FD1sacdeW8E/detection_proof.mp4" type="video/mp4"/>
-</video>
+<video controls width="854" poster="https://cdn.jsdelivr.net/gh/ruddro-roy/road-risk-review-case-studies@main/case-studies/FD1sacdeW8E/proof_poster.jpg" src="https://cdn.jsdelivr.net/gh/ruddro-roy/road-risk-review-case-studies@main/case-studies/FD1sacdeW8E/detection_proof.mp4"></video>
 
 Poster: [proof_poster.jpg](case-studies/FD1sacdeW8E/proof_poster.jpg) | Timeline: [00_risk_timeline.png](case-studies/FD1sacdeW8E/00_risk_timeline.png) | Review: [investigation_review.md](case-studies/FD1sacdeW8E/investigation_review.md)
 
@@ -34,9 +32,7 @@ Conflict **8.47 s** | duration **10.90 s** | peak risk **0.97**
 
 ![Animated proof](case-studies/PB5bNj3dzEk/detection_proof.gif)
 
-<video controls width="854" poster="case-studies/PB5bNj3dzEk/proof_poster.jpg">
-  <source src="case-studies/PB5bNj3dzEk/detection_proof.mp4" type="video/mp4"/>
-</video>
+<video controls width="854" poster="https://cdn.jsdelivr.net/gh/ruddro-roy/road-risk-review-case-studies@main/case-studies/PB5bNj3dzEk/proof_poster.jpg" src="https://cdn.jsdelivr.net/gh/ruddro-roy/road-risk-review-case-studies@main/case-studies/PB5bNj3dzEk/detection_proof.mp4"></video>
 
 Poster: [proof_poster.jpg](case-studies/PB5bNj3dzEk/proof_poster.jpg) | Timeline: [00_risk_timeline.png](case-studies/PB5bNj3dzEk/00_risk_timeline.png) | Review: [investigation_review.md](case-studies/PB5bNj3dzEk/investigation_review.md)
 
