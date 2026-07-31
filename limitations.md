@@ -1,46 +1,57 @@
 # Limitations
 
-This is not ADAS, collision avoidance, or a substitute for driver or rider judgment. False negatives and false positives are expected. Wet or slippery road cues are visual proxies only, not friction measurement. Output is for human review only.
+Human review required. This work is not ADAS, collision avoidance, or a
+substitute for driver or rider judgment. False positives and false negatives
+are expected.
 
-## Pipeline-wide
+## Measured causal replay
 
-- Confidence values are not yet calibrated. A score of 0.7 is not a measured true-positive rate.
-- Analysis applies to recorded clips, not live feeds.
-- Heavy compression, low resolution, camera shake, or unusual mount angles can degrade every cue at once.
+- Raw float32 BADAS-Open inference on the NVIDIA L4 did not sustain the attempted
+  8 Hz cadence. Every positive and negative sample missed the 125 ms compute
+  deadline.
+- The reported 4.00 Hz and 4.02 Hz rates are produced by a deterministic
+  virtual-clock projection using measured per-window compute times. The test was
+  not wall-clock paced and is not an end-to-end live camera benchmark.
+- Measured compute excludes camera capture, source decode, resize,
+  causal-window assembly, display, and operating-system jitter. Adding those
+  costs can only worsen end-to-end latency.
+- The scheduler keeps one in-flight window and chooses the newest causally ready
+  unprocessed window without reading its score. This avoids an ever-growing FIFO
+  backlog but discards older ready windows.
+- Scores use zero-order hold until the next projected output becomes available.
+  A replay frame never reads a future output.
+- The `exploratory_v1` threshold and two-sample confirmation rule are frozen for
+  this pair but are unvalidated and uncalibrated.
+- The labeled negative produced a false-positive confirmation. This directly
+  blocks a safety-readiness, reliable-alert, or collision-warning claim.
+- Two short night clips do not estimate sensitivity, specificity, calibration,
+  subgroup performance, robustness, or fleet false-positive rate.
 
-## Per detector
+## Learned temporal model
 
-**Visibility:** Weak separation of low light vs underexposure. Cannot distinguish fog, condensation, and a dirty lens.
+- The BADAS-Open collision-class score is not a probability of a real-world
+  collision.
+- A frozen checkpoint can learn dataset-specific cues that fail under new
+  cameras, roads, lighting, geography, compression, weather, or road-user mix.
+- Repeat-run equality checks deterministic execution for these inputs; it does
+  not validate the model's semantics or generalization.
+- No alert timing result here is a validated advance-warning lead time.
 
-**Motion flow:** Sensitive to wipers, reflections, and mount shake. Edge motion is often artifact, not a road event.
+## Recorded-video pipeline
 
-**Evidence video:** The colored saliency is residual optical flow, not model
-attention. The motion-centroid trail is not an object ID. The fixed ego review
-corridor is not lane detection, path prediction, or steering guidance.
+- All examples are recorded clips, not live feeds.
+- Heavy compression, low resolution, low light, camera shake, unusual mounts,
+  occlusion, glare, rain, and reflections can degrade multiple cues together.
+- Residual optical-flow saliency in historical videos is not model attention.
+  A motion-centroid trail is not object tracking, and a fixed ego corridor is
+  not lane or path prediction.
+- Visual wet-road cues are not friction measurements. Proximity cues are not
+  physical distance. Geometry estimates are not steering guidance.
 
-**Learned temporal model:** The July 31, 2026 renders contain reviewed
-BADAS-Open output from a pinned V-JEPA 2 backbone. Its temperature-scaled
-collision-class score is not calibrated for these clips and must not be read
-as a real-world probability. BADAS-Open's model card notes reduced performance
-on rare categories including motorcycles. The motorcycle clip is saturated
-from the first model-covered sample, so it supports no learned onset or
-lead-time claim.
+## What this repository does not prove
 
-**Lane curvature:** Geometry estimate from the lower frame band. Degrades on cobblestones, markings, and shadows. Not steering angle or surveyed road geometry.
-
-**Lead proximity:** Closing proxy from object boxes or forward-region scale change. Not distance. Weak when the lead vehicle is occluded or enters from the side.
-
-**VRU presence:** Person and bicycle classes when a model is active. Static shapes and parked bikes can false-positive. Heuristic fallback is experimental.
-
-**Surface inference:** Visual proxy from reflections, spray, rain streaks, and low luminance. Not friction measurement. Always low confidence.
-
-## Scoring
-
-- Severity bands are bucketed from a continuous score. Near-boundary events may differ in band despite similar cues.
-- Short events below the merge window can be dropped to reduce flicker.
-
-## What this repo does not prove
-
-- Fleet false-positive rate
-- Legal admissibility or fault assignment
-- Live safety-critical performance
+- Safe or useful real-time driver assistance
+- Production latency, availability, or hardware suitability
+- Legal admissibility, fault assignment, or regulatory compliance
+- Generalization beyond the published clips
+- Permission for commercial redistribution of Nexar-derived material

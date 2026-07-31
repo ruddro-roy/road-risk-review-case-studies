@@ -1,83 +1,77 @@
-# Incident case studies
+# Measured causal-replay results
 
-Two segments from public YouTube uploads, used for educational research
-demonstration. Temporal evidence is synchronized with the reviewed timeline.
-Human review required. Not a benchmark. Source detail: [SOURCE.md](SOURCE.md).
+The primary result is a paired positive and negative night-driving control from
+the licensed Nexar Collision Prediction dataset. Both cases use the same
+reviewed BADAS-Open 1.0.0 checkpoint on a pinned V-JEPA 2 ViT-L backbone, the
+same causal preprocessing, and the same frozen `exploratory_v1` display policy.
+The score is an uncalibrated collision-class score, not a real-world collision
+probability.
 
-Timings match the labels burned into each proof export at container FPS.
+## Labeled positive: `nexar-night-positive-00962`
 
-## Dashcam T-bone (ViralHog) (`FD1sacdeW8E`)
+Raw FIFO inference attempted one output every 125 ms (8 Hz). NVIDIA L4 total
+compute was 250.01 ms median and 256.25 ms p95; 0 of 58 samples met the 125 ms
+deadline. Raw 8 Hz therefore failed.
 
-Conflict **32.50 s** | duration **38.53 s** | peak risk **0.96** | advance ~**0.6 s** (moderate)
+The measured-latency latest-window projection retained 30 of 58 source windows,
+superseded 28 older ready windows without inspecting their scores, and emitted
+at 4.003 Hz. Its frozen policy first confirmed at target time 4.00 s,
+availability time 4.129 s, and 30 fps displayed time 4.133 s.
 
-**Footage:** Vehicle enters from the side for a T-bone style impact near 32.5 s.
+https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
 
-**Output:** Risk crosses moderate band ~0.6 s before conflict. Phases: pre_conflict 31.9 to 32.5 s, conflict 32.5 s, post_impact 32.5 to 38.5 s.
+[Replay](case-studies/nexar-night-positive-00962/causal_replay.mp4) |
+[web encode](case-studies/nexar-night-positive-00962/causal_replay_web.mp4) |
+[manifest](case-studies/nexar-night-positive-00962/causal_replay_manifest.json) |
+[model evidence](case-studies/nexar-night-positive-00962/model_evidence.json) |
+[raw timing trace](case-studies/nexar-night-positive-00962/causal_replay_trace.json) |
+[projection](case-studies/nexar-night-positive-00962/causal_projection.json)
 
-**Learned evidence:** BADAS-Open/V-JEPA 2 rises from 0.11, peaks at
-0.974, and first crosses its 0.80 display threshold at 32.125 s. That is
-0.375 s before the reviewed conflict. This is an uncalibrated collision-class
-score, not a probability of real-world collision.
+## Labeled negative: `nexar-night-negative-01169`
 
-https://github.com/user-attachments/assets/84d96a1d-a414-4b05-9ee4-0137d4d0b4df
+Raw FIFO inference attempted the same 125 ms cadence. NVIDIA L4 total compute
+was 248.35 ms median and 254.06 ms p95; 0 of 71 samples met the deadline.
 
-[Versioned evidence video](case-studies/FD1sacdeW8E/temporal_evidence.mp4) |
-[poster](case-studies/FD1sacdeW8E/temporal_evidence_poster.jpg) |
-[provenance](case-studies/FD1sacdeW8E/temporal_evidence_manifest.json) |
-[model evidence](case-studies/FD1sacdeW8E/model_evidence.json) |
-[per-frame data](case-studies/FD1sacdeW8E/summary.public.json)
+The same projection retained 37 of 71 source windows, superseded 34, and
+emitted at 4.021 Hz. The same frozen policy produced a false-positive
+confirmation at target time 4.75 s, availability time 4.850 s, and 30 fps
+displayed time 4.867 s.
 
-Compact legacy overlay: [MP4](case-studies/FD1sacdeW8E/detection_proof.mp4) |
-[GIF](case-studies/FD1sacdeW8E/detection_proof.gif) |
-[timeline](case-studies/FD1sacdeW8E/00_risk_timeline.png) |
-[review](case-studies/FD1sacdeW8E/investigation_review.md)
+https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
 
-Full resolution: [detection_proof_hd.mp4](case-studies/FD1sacdeW8E/detection_proof_hd.mp4)
+[Replay](case-studies/nexar-night-negative-01169/causal_replay.mp4) |
+[web encode](case-studies/nexar-night-negative-01169/causal_replay_web.mp4) |
+[manifest](case-studies/nexar-night-negative-01169/causal_replay_manifest.json) |
+[model evidence](case-studies/nexar-night-negative-01169/model_evidence.json) |
+[raw timing trace](case-studies/nexar-night-negative-01169/causal_replay_trace.json) |
+[projection](case-studies/nexar-night-negative-01169/causal_projection.json)
 
-Source (context): https://www.youtube.com/watch?v=FD1sacdeW8E
+## Interpretation
 
-## Motorbike low-side (helmet-mounted camera) (`PB5bNj3dzEk`)
+This pair proves that the evidence path can bind real model output, measured GPU
+timing, causal availability, scheduler decisions, policy state, and rendered
+media into inspectable artifacts. It does not prove a useful alert system. The
+negative confirmation is direct evidence that this checkpoint and policy are
+not ready for driver-facing safety use.
 
-Conflict **8.47 s** | duration **10.90 s** | peak risk **0.97**
+The latest-window result is a virtual-clock projection using measured
+per-window compute durations. It is not a wall-clock-paced or end-to-end live
+test. Decode, resize, causal-window assembly, camera capture, display, and
+operating-system jitter are excluded from the timing claim.
 
-**Footage:** Low-side loss of control with peak motion near 8.5 s.
+## Historical YouTube demonstrations
 
-**Output:** No isolatable advance-warning lead time. Imminent window 6.47 to 8.47 s. Phases: pre_conflict 1.0 to 8.47 s, conflict 8.47 s, post_impact 8.47 to 10.87 s.
+Two older examples remain in the repository:
 
-**Learned evidence:** BADAS-Open/V-JEPA 2 is already above 0.94 at the
-first model-covered sample and remains high. The score therefore supplies no
-isolatable learned onset or lead-time claim for this clip.
+- [`FD1sacdeW8E`](case-studies/FD1sacdeW8E/): dashcam cross-traffic incident
+- [`PB5bNj3dzEk`](case-studies/PB5bNj3dzEk/): helmet-camera low-side incident
 
-https://github.com/user-attachments/assets/45bc5256-9a7d-4b79-8d50-940d4b51fb8b
-
-[Versioned evidence video](case-studies/PB5bNj3dzEk/temporal_evidence.mp4) |
-[poster](case-studies/PB5bNj3dzEk/temporal_evidence_poster.jpg) |
-[provenance](case-studies/PB5bNj3dzEk/temporal_evidence_manifest.json) |
-[model evidence](case-studies/PB5bNj3dzEk/model_evidence.json) |
-[per-frame data](case-studies/PB5bNj3dzEk/summary.public.json)
-
-Compact legacy overlay: [MP4](case-studies/PB5bNj3dzEk/detection_proof.mp4) |
-[GIF](case-studies/PB5bNj3dzEk/detection_proof.gif) |
-[timeline](case-studies/PB5bNj3dzEk/00_risk_timeline.png) |
-[review](case-studies/PB5bNj3dzEk/investigation_review.md)
-
-Full resolution: [detection_proof_hd.mp4](case-studies/PB5bNj3dzEk/detection_proof_hd.mp4)
-
-Source (context): https://www.youtube.com/watch?v=PB5bNj3dzEk
-
-## Evidence provenance
-
-The colored saliency layer is residual optical flow after subtracting median
-camera motion. It is not learned-model attention. The motion-centroid trail is
-not an object identity. The ego corridor is a fixed review region, not a
-predicted path.
-
-The green curve is deterministic fused CV evidence. The cyan curve is the
-separate reviewed BADAS collision-class score from a pinned V-JEPA 2 backbone.
-Neither is a calibrated collision probability. Learned values are direct 8 Hz
-samples; the 15 fps renderer interpolates only between adjacent samples for
-display and never extrapolates beyond model coverage.
+They show earlier temporal and deterministic review presentation. They are
+historical demonstrations, not part of the paired Nexar control result and not
+evidence of live performance. See [SOURCE.md](SOURCE.md) for their separate
+rights context.
 
 ## Limits
 
-[limitations.md](limitations.md)
+See [causal-replay-method.md](causal-replay-method.md) and
+[limitations.md](limitations.md). Human review required. Not ADAS.

@@ -1,0 +1,213 @@
+{
+  "renderer": "causal-replay-2.0.0",
+  "case_id": "nexar-night-negative-01169",
+  "title": "Nexar night negative 01169",
+  "source": {
+    "sha256": "14b90d9a88a3c7a98255340a49dfd9f8cfbc0baec6e0fe070e6c4e505b10a5c9",
+    "attribution": "Moura, Daniel C., and Zvitia, Orly. \"Nexar Collison Dataset.\" Hugging Face, 2025, https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction.",
+    "license": "Nexar Open Data License, Copyright (c) 2025 Nexar Inc.; attribution, redistribution conditions, ethical-use restrictions, and disclaimers apply."
+  },
+  "evidence": {
+    "run_id": "b881e57c-9d85-417a-9af2-1dabdb4cfbab",
+    "review_status": "reviewed",
+    "samples_sha256": "af8a91846ca7bb8746579bcc533f097059b7daa8366731f73fc32ed1c947540e",
+    "display_threshold": 0.8
+  },
+  "trace": {
+    "trace_run_id": "083d4d04-3146-4596-bece-84b161b0a0e1",
+    "samples_sha256": "31d5abf114e29a54b3adba02df402d456014c89caf74f463b3cce12e6a122c4b",
+    "raw_realtime_budget_pass": false
+  },
+  "projection": {
+    "run_id": "e4413336-4618-4437-b857-8856eeeda74f",
+    "artifact_sha256": "85c7ad596e07f5ad5f3e2e6d9066bc9e8d95a01624665cbd7096f96c854b10af",
+    "samples_sha256": "219540711bd952b59cabac0424fbaa2b0840999f842313538a6f68ead8c369a5",
+    "superseded_indices_sha256": "fbf8ae342bb4ac1e95f973c5e5c304d414d65ad0ccd59df71141afa3da8dd51f",
+    "scheduler": {
+      "name": "work_conserving_latest_ready_single_slot",
+      "virtual_clock": true,
+      "wall_clock_paced": false,
+      "max_in_flight": 1,
+      "pending_capacity": 1,
+      "score_blind": true,
+      "source_fifo_availability_reused": false,
+      "selection_semantics": "When compute is free, emit the newest unprocessed window whose latest input is causally ready; supersede all older ready windows."
+    },
+    "performance": {
+      "source_sample_count": 71,
+      "emitted_count": 37,
+      "superseded_count": 34,
+      "retained_rate": 0.521127,
+      "observed_emission_rate_hz": 4.020505,
+      "source_realtime_budget_pass": false,
+      "total_compute_ms": {
+        "p50": 248.994209,
+        "p95": 253.785441,
+        "max": 255.090441
+      },
+      "target_lag_ms": {
+        "p50": 207.382,
+        "p95": 229.1112,
+        "max": 322.195
+      },
+      "input_age_ms": {
+        "p50": 342.42,
+        "p95": 370.7782,
+        "max": 472.195
+      },
+      "availability_gap_ms": {
+        "p50": 248.9685,
+        "p95": 253.82075,
+        "max": 255.091
+      }
+    },
+    "source_raw_realtime_budget_pass": false
+  },
+  "policy": {
+    "version": "exploratory_v1",
+    "threshold": 0.8,
+    "confirmation_rule": "Two successive emitted scores at or above threshold within 0.5 s, after at least one prior emitted low.",
+    "validated_for_adas": false
+  },
+  "outcome": {
+    "kind": "false_positive_confirmation",
+    "expected_class": "negative",
+    "first_confirmed_target_t_s": 4.75,
+    "first_confirmed_available_t_s": 4.849726,
+    "first_confirmed_displayed_t_s": 4.866667,
+    "first_sustained_displayed_t_s": null
+  },
+  "window": {
+    "start_s": 0.0,
+    "end_s": 10.8,
+    "end_inclusive": true
+  },
+  "output": {
+    "fps": 30,
+    "width": 1600,
+    "height": 900,
+    "codec": "H.264 High, yuv420p, faststart",
+    "master": {
+      "file": "causal_replay.mp4",
+      "bytes": 1815324,
+      "sha256": "85048aadb35e4bc579a7d4ccfaee0c88f15b73b320ed449283849799ec47cefb",
+      "size_guard": {
+        "max_bytes": 9728000,
+        "initial_bytes": 1815324,
+        "reencoded": false,
+        "bounded_crf": null
+      }
+    },
+    "web": {
+      "file": "causal_replay_web.mp4",
+      "width": 1280,
+      "height": 720,
+      "bytes": 956699,
+      "sha256": "8620b5f4a0982ad797b0faa466adb7dd7410fb5a3866dd71a6eb3284c900e87e",
+      "size_guard": {
+        "max_bytes": 3145728,
+        "initial_bytes": 956699,
+        "reencoded": false,
+        "bounded_crf": null
+      }
+    },
+    "poster": {
+      "file": "causal_replay_poster.jpg",
+      "sha256": "cd06d3dd6dcf2bf5a9610a0a8fea389abfd6a2e263db9375b6dfd9cff3cfd03d"
+    }
+  },
+  "performance": {
+    "raw_fifo_trace": {
+      "sample_count": 71,
+      "preprocess_ms": {
+        "p50": 11.93021,
+        "p95": 12.363252,
+        "max": 13.313681
+      },
+      "h2d_ms": {
+        "p50": 1.151127,
+        "p95": 1.171697,
+        "max": 1.200618
+      },
+      "gpu_forward_ms": {
+        "p50": 235.51239,
+        "p95": 241.502747,
+        "max": 244.206299
+      },
+      "total_compute_ms": {
+        "p50": 248.345413,
+        "p95": 254.059488,
+        "max": 257.54945
+      },
+      "deadline_met_count": 0,
+      "deadline_met_rate": 0.0,
+      "realtime_budget_pass": false
+    },
+    "latest_window_projection": {
+      "source_sample_count": 71,
+      "emitted_count": 37,
+      "superseded_count": 34,
+      "retained_rate": 0.521127,
+      "observed_emission_rate_hz": 4.020505,
+      "source_realtime_budget_pass": false,
+      "total_compute_ms": {
+        "p50": 248.994209,
+        "p95": 253.785441,
+        "max": 255.090441
+      },
+      "target_lag_ms": {
+        "p50": 207.382,
+        "p95": 229.1112,
+        "max": 322.195
+      },
+      "input_age_ms": {
+        "p50": 342.42,
+        "p95": 370.7782,
+        "max": 472.195
+      },
+      "availability_gap_ms": {
+        "p50": 248.9685,
+        "p95": 253.82075,
+        "max": 255.091
+      }
+    }
+  },
+  "state_transitions": [
+    {
+      "t_s": 0.0,
+      "state": "buffering"
+    },
+    {
+      "t_s": 2.133333,
+      "state": "monitoring"
+    },
+    {
+      "t_s": 4.633333,
+      "state": "transient_high"
+    },
+    {
+      "t_s": 4.866667,
+      "state": "confirmed"
+    },
+    {
+      "t_s": 5.133333,
+      "state": "monitoring"
+    }
+  ],
+  "causal_guards": [
+    "Only projected samples with available_t_s <= displayed source time are shown.",
+    "The latest-window scheduler is score-blind and has one in-flight window.",
+    "Scores use zero-order hold; no interpolation reads a future sample.",
+    "History is positioned by projected availability time, not model target time.",
+    "Human-reviewed conflict data appears only after the replay is complete.",
+    "Raw per-frame cues are selected at or before the displayed source time."
+  ],
+  "limitations": [
+    "Recorded causal replay, not an end-to-end camera deployment.",
+    "The latest-window schedule is a measured-latency virtual-clock projection.",
+    "The BADAS collision-class score is uncalibrated.",
+    "End-to-end latency excludes camera capture, display, and operating-system jitter.",
+    "Measured compute excludes source decode, resize, and causal-window assembly.",
+    "Human review required; not ADAS or collision prevention."
+  ]
+}
