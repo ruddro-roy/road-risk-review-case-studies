@@ -1,45 +1,69 @@
 # Architecture overview
 
-Conceptual layout of the private road-risk-review product beta. No implementation detail here.
+The public evidence separates model execution, scheduler projection, policy,
+and presentation so each claim can be inspected independently.
 
+```text
+recorded licensed clip
+        |
+        v
+causal 16-frame contexts at an attempted 8 Hz cadence
+        |
+        v
+pinned BADAS-Open / V-JEPA 2 inference on NVIDIA L4
+        |
+        +--> reviewed model evidence: scores, revisions, hashes, repeat run
+        |
+        v
+raw FIFO timing trace: measured compute and 125 ms deadline result
+        |
+        v
+score-blind latest-ready scheduler (virtual clock, one in flight)
+        |
+        +--> emitted windows + explicitly superseded windows
+        |
+        v
+frozen exploratory display policy
+        |
+        v
+causal replay renderer + binding manifest
+        |
+        v
+human review
 ```
-  upload clip
-       |
-       v
-  analysis worker  ---->  pluggable detectors (visibility, motion, lane,
-       |                   proximity, VRU, surface, objects)
-       v
-  cue fusion and scoring
-       |
-       v
-  flagged events + investigation pack
-       |
-       v
-  temporal evidence renderer  ---->  reviewed public artifacts
-       |
-       v
-  review UI (desktop)
-```
 
-**Detectors** run independently. Each returns cues with a confidence. None is trusted alone.
+## Evidence contract
 
-**Fusion** groups cues across frames, estimates conflict timing, and assigns incident phases (pre_conflict, conflict, post_impact).
+`model_evidence.json` records exact model revisions, checkpoint hash, input
+hash, causal preprocessing, direct samples, checkpoint-load audit, repeat-run
+integrity, and review status.
 
-**Evidence rendering** synchronizes the source window with fused risk, cue
-channels, residual optical-flow saliency, a motion-centroid trail, incident
-phase, and the reviewed conflict marker. The public manifest records which
-channels were active.
+`causal_replay_trace.json` records measured per-window preprocessing,
+host-to-device transfer, GPU forward, and total compute times from the raw FIFO
+run. It also records that the attempted 125 ms deadline was not met.
 
-**Learned-model slot** is optional. The published cases use reviewed
-BADAS-Open inference on a pinned V-JEPA 2 backbone through a strict,
-versioned evidence contract. The contract records direct causal samples,
-model and input hashes, checkpoint loading, repeat-run integrity, and review
-status. If the file is absent or unreviewed, the renderer fails closed for a
-learned-model publication.
+`causal_projection.json` applies a deterministic, score-blind,
+work-conserving latest-ready scheduler to those measured durations. It is a
+virtual-clock counterfactual, not a second live inference run.
 
-**Output** is assistive: labeled timestamps, charts, videos, and exportable
-review artifacts. A human decides what the footage shows.
+`causal_replay_manifest.json` binds the evidence, trace, projection, policy,
+render window, media hashes, transitions, causal guards, and limitations.
 
-Recorded clips only in the current beta. Live feed is planned separately.
+## Causal presentation boundary
 
-See [limitations.md](limitations.md).
+During replay, only projected outputs whose `available_t_s` is at or before the
+displayed source time are visible. History is placed by availability time and
+scores are held, not interpolated from future values. Human-reviewed labels and
+recap text appear only after the replay window.
+
+## Private product boundary
+
+The private product also contains deterministic cue extraction, fusion,
+incident review, and export workflows. Those implementation details are not
+published here. The older YouTube case folders show that historical path and
+remain separate from the paired Nexar measured replay.
+
+Recorded clips only. Human review required. Not ADAS.
+
+See [causal-replay-method.md](causal-replay-method.md) and
+[limitations.md](limitations.md).

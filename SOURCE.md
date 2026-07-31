@@ -1,40 +1,54 @@
-# Source footage
+# Source footage and rights
 
-## What these clips are
+## Primary paired controls: Nexar Collision Prediction dataset
 
-Both case studies use short segments from publicly available YouTube uploads. They were chosen as fixed, reproducible examples for an educational research demo: showing how assistive review labels risk on real dashcam and helmet-camera footage.
+The leading positive and negative controls are derived from the Nexar Collision
+Prediction dataset:
 
-This is not a commercial product video. It is not a news report. It is not a safety guarantee about either incident.
+| Public case ID | Dataset split and label | Source clip |
+|---|---|---|
+| `nexar-night-positive-00962` | `test-public/positive` | `00962.mp4` |
+| `nexar-night-negative-01169` | `test-public/negative` | `01169.mp4` |
 
-## Sources
+Required attribution:
 
-| ID | Description | YouTube |
-|----|-------------|---------|
-| FD1sacdeW8E | Dashcam T-bone (ViralHog) | https://www.youtube.com/watch?v=FD1sacdeW8E |
-| PB5bNj3dzEk | Motorbike low-side (helmet-mounted camera) | https://www.youtube.com/watch?v=PB5bNj3dzEk |
+> Moura, Daniel C., and Zvitia, Orly. "Nexar Collison Dataset." Hugging Face, 2025, https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction.
 
-Copyright in the underlying footage remains with the original uploaders and any parties they licensed. road-risk-review does not claim ownership of the source video.
+Copyright (c) 2025 Nexar Inc.
 
-## What we publish here
+Use and redistribution are governed by the Nexar Open Data License reproduced
+byte-for-byte in [NEXAR_DATA_LICENSE.txt](NEXAR_DATA_LICENSE.txt). It requires
+attribution and retention of its copyright, conditions, and disclaimers. The
+Dataset may not be sold, sublicensed, or otherwise redistributed for profit
+without prior written consent from Nexar Inc. Ethical-use restrictions also
+apply, including restrictions concerning unsafe or harmful systems,
+misinformation, reidentification, weaponization, exploitation, and unlawful
+use.
 
-Proof files in this repository are derived exports: frame-labeled review output burned over the source segment (risk band, phase, timestamps). They exist to show what the private prototype produced on known footage, not to redistribute the clips as standalone entertainment or news.
+This repository publishes transformed review videos and evidence artifacts, not
+the standalone source MP4 files. The Nexar-derived material is presented for
+noncommercial research, evaluation, and portfolio review. It is not offered for
+sale or redistribution for profit.
 
-We do not ship the raw downloaded source files separately.
+## Historical YouTube demonstrations
 
-## Purpose
+The following older cases remain only as historical demonstrations:
 
-Educational and research demonstration only:
+| ID | Description | YouTube source |
+|---|---|---|
+| `FD1sacdeW8E` | Dashcam T-bone (ViralHog) | https://www.youtube.com/watch?v=FD1sacdeW8E |
+| `PB5bNj3dzEk` | Motorbike low-side (helmet-mounted camera) | https://www.youtube.com/watch?v=PB5bNj3dzEk |
 
-- Show timing and cues on recorded incident footage
-- Let a human reviewer compare labels to what they see
-- Document a regression check on fixed public examples
+Copyright in the underlying YouTube footage remains with the original
+uploaders and any parties they licensed. road-risk-review does not claim
+ownership. The repository contains labeled derived exports rather than the raw
+downloaded source files. Do not treat those exports as freely reusable media;
+check the original source and YouTube terms before reuse.
 
-Not for use while driving. Not fault finding. Not ADAS.
+If you control either historical upload and want an export removed or its link
+changed, open an issue or contact the maintainer.
 
-## If you are the uploader
+## Safety boundary
 
-If you uploaded either source video and want a proof file removed or the link adjusted, open an issue on this repository or contact the maintainer. We will respond promptly.
-
-## Redistribution
-
-Do not treat proof exports as freely reusable media. Check YouTube terms and the original upload before sharing outside this demo context.
+All material is recorded-video research evidence for human review. It is not
+for use while driving, fault assignment, ADAS, or collision prevention.

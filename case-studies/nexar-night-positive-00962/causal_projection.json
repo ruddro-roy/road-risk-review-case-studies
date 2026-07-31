@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "mode": "measured_latest_window_projection",
+  "run_id": "541c2b8e-7d1c-4441-9a20-25017466a6b5",
+  "created_at": "2026-07-31T13:34:42.494009Z",
+  "bindings": {
+    "evidence_run_id": "899c14dc-a998-4d9c-9ac6-1ee42d59f477",
+    "evidence_samples_sha256": "c10fba75d73bd6996f263268e8419d6cce16e7711c50c6c87808f9f1925714c8",
+    "input_sha256": "96e49de1017fb5a57b45b4d2d2c6353d5e769231afc4e7c145603b9def3618a5",
+    "trace_run_id": "af48a792-3c69-4b27-bbe5-556d9fc50bec",
+    "trace_samples_sha256": "10fc0f1bde3bb4ada34991df0360b9f2fa1c23ec6048527b49d153edef0ccab1"
+  },
+  "scheduler": {
+    "name": "work_conserving_latest_ready_single_slot",
+    "virtual_clock": true,
+    "wall_clock_paced": false,
+    "max_in_flight": 1,
+    "pending_capacity": 1,
+    "score_blind": true,
+    "source_fifo_availability_reused": false,
+    "selection_semantics": "When compute is free, emit the newest unprocessed window whose latest input is causally ready; supersede all older ready windows."
+  },
+  "samples": [
+    {
+      "source_index": 0,
+      "t_s": 2.0,
+      "latest_input_t_s": 1.866667,
+      "compute_start_s": 1.866667,
+      "compute_finished_s": 2.125218,
+      "total_compute_ms": 258.550912,
+      "available_t_s": 2.125218
+    },
+    {
+      "source_index": 2,
+      "t_s": 2.25,
+      "latest_input_t_s": 2.1,
+      "compute_start_s": 2.125218,
+      "compute_finished_s": 2.368314,
+      "total_compute_ms": 243.096483,
+      "available_t_s": 2.368314
+    },
+    {
+      "source_index": 4,
+      "t_s": 2.5,
+      "latest_input_t_s": 2.366667,
+      "compute_start_s": 2.368314,
+      "compute_finished_s": 2.62015,
+      "total_compute_ms": 251.835117,
+      "available_t_s": 2.62015
+    },
+    {
+      "source_index": 6,
+      "t_s": 2.75,
+      "latest_input_t_s": 2.6,
+      "compute_start_s": 2.62015,
+      "compute_finished_s": 2.872454,
+      "total_compute_ms": 252.304547,
+      "available_t_s": 2.872454
+    },
+    {
+      "source_index": 8,
+      "t_s": 3.0,
+      "latest_input_t_s": 2.866667,
+      "compute_start_s": 2.872454,
+      "compute_finished_s": 3.119216,
+      "total_compute_ms": 246.762408,
+      "available_t_s": 3.119216
+    },
+    {
+      "source_index": 10,
+      "t_s": 3.25,
+      "latest_input_t_s": 3.1,
+      "compute_start_s": 3.119216,
+      "compute_finished_s": 3.37126,
+      "total_compute_ms": 252.043721,
+      "available_t_s": 3.37126
+    },
+    {
+      "source_index": 12,
+      "t_s": 3.5,
+      "latest_input_t_s": 3.366667,
+      "compute_start_s": 3.37126,
+      "compute_finished_s": 3.624307,
+      "total_compute_ms": 253.046965,
+      "available_t_s": 3.624307
+    },
+    {
+      "source_index": 14,
+      "t_s": 3.75,
+      "latest_input_t_s": 3.6,
+      "compute_start_s": 3.624307,
+      "compute_finished_s": 3.876615,
+      "total_compute_ms": 252.307807,
+      "available_t_s": 3.876615
+    },
+    {
+      "source_index": 16,
+      "t_s": 4.0,
+      "latest_input_t_s": 3.866667,
+      "compute_start_s": 3.876615,
+      "compute_finished_s": 4.129499,
+      "total_compute_ms": 252.884171,
+      "available_t_s": 4.129499
+    },
+    {
+      "source_index": 18,
+      "t_s": 4.25,
+      "latest_input_t_s": 4.1,
+      "compute_start_s": 4.129499,
+      "compute_finished_s": 4.378139,
+      "total_compute_ms": 248.640252,
+      "available_t_s": 4.378139
+    },
+    {
+      "source_index": 20,
+      "t_s": 4.5,
+      "latest_input_t_s": 4.366667,
+      "compute_start_s": 4.378139,
+      "compute_finished_s": 4.623636,
+      "total_compute_ms": 245.496648,
+      "available_t_s": 4.623636
+    },
+    {
+      "source_index": 22,
+      "t_s": 4.75,
+      "latest_input_t_s": 4.6,
+      "compute_start_s": 4.623636,
+      "compute_finished_s": 4.876051,
+      "total_compute_ms": 252.41502,
+      "available_t_s": 4.876051
+    },
+    {
+      "source_index": 24,
+      "t_s": 5.0,
+      "latest_input_t_s": 4.866667,
+      "compute_start_s": 4.876051,
+      "compute_finished_s": 5.126168,
+      "total_compute_ms": 250.116857,
+      "available_t_s": 5.126168
+    },
+    {
+      "source_index": 26,
+      "t_s": 5.25,
+      "latest_input_t_s": 5.1,
+      "compute_start_s": 5.126168,
+      "compute_finished_s": 5.379585,
+      "total_compute_ms": 253.416943,
+      "available_t_s": 5.379585
+    },
+    {
+      "source_index": 28,
+      "t_s": 5.5,
+      "latest_input_t_s": 5.366667,
+      "compute_start_s": 5.379585,
+      "compute_finished_s": 5.632434,
+      "total_compute_ms": 252.84944,
+      "available_t_s": 5.632434
+    },
+    {
+      "source_index": 30,
+      "t_s": 5.75,
+      "latest_input_t_s": 5.6,
+      "compute_start_s": 5.632434,
+      "compute_finished_s": 5.885178,
+      "total_compute_ms": 252.743618,
+      "available_t_s": 5.885178
+    },
+    {
+      "source_index": 32,
+      "t_s": 6.0,
+      "latest_input_t_s": 5.866667,
+      "compute_start_s": 5.885178,
+      "compute_finished_s": 6.130527,
+      "total_compute_ms": 245.348956,
+      "available_t_s": 6.130527
+    },
+    {
+      "source_index": 34,
+      "t_s": 6.25,
+      "latest_input_t_s": 6.1,
+      "compute_start_s": 6.130527,
+      "compute_finished_s": 6.384374,
+      "total_compute_ms": 253.846824,
+      "available_t_s": 6.384374
+    },
+    {
+      "source_index": 36,
+      "t_s": 6.5,
+      "latest_input_t_s": 6.366667,
+      "compute_start_s": 6.384374,
+      "compute_finished_s": 6.63424,
+      "total_compute_ms": 249.86623,
+      "available_t_s": 6.63424
+    },
+    {
+      "source_index": 38,
+      "t_s": 6.75,
+      "latest_input_t_s": 6.6,
+      "compute_start_s": 6.63424,
+      "compute_finished_s": 6.887703,
+      "total_compute_ms": 253.463034,
+      "available_t_s": 6.887703
+    },
+    {
+      "source_index": 40,
+      "t_s": 7.0,
+      "latest_input_t_s": 6.866667,
+      "compute_start_s": 6.887703,
+      "compute_finished_s": 7.131468,
+      "total_compute_ms": 243.765359,
+      "available_t_s": 7.131468
+    },
+    {
+      "source_index": 42,
+      "t_s": 7.25,
+      "latest_input_t_s": 7.1,
+      "compute_start_s": 7.131468,
+      "compute_finished_s": 7.376401,
+      "total_compute_ms": 244.933086,
+      "available_t_s": 7.376401
+    },
+    {
+      "source_index": 44,
+      "t_s": 7.5,
+      "latest_input_t_s": 7.366667,
+      "compute_start_s": 7.376401,
+      "compute_finished_s": 7.627738,
+      "total_compute_ms": 251.336104,
+      "available_t_s": 7.627738
+    },
+    {
+      "source_index": 46,
+      "t_s": 7.75,
+      "latest_input_t_s": 7.6,
+      "compute_start_s": 7.627738,
+      "compute_finished_s": 7.872998,
+      "total_compute_ms": 245.260663,
+      "available_t_s": 7.872998
+    },
+    {
+      "source_index": 48,
+      "t_s": 8.0,
+      "latest_input_t_s": 7.866667,
+      "compute_start_s": 7.872998,
+      "compute_finished_s": 8.12482,
+      "total_compute_ms": 251.821616,
+      "available_t_s": 8.12482
+    },
+    {
+      "source_index": 50,
+      "t_s": 8.25,
+      "latest_input_t_s": 8.1,
+      "compute_start_s": 8.12482,
+      "compute_finished_s": 8.370069,
+      "total_compute_ms": 245.249623,
+      "available_t_s": 8.370069
+    },
+    {
+      "source_index": 52,
+      "t_s": 8.5,
+      "latest_input_t_s": 8.366667,
+      "compute_start_s": 8.370069,
+      "compute_finished_s": 8.619548,
+      "total_compute_ms": 249.479022,
+      "available_t_s": 8.619548
+    },
+    {
+      "source_index": 54,
+      "t_s": 8.75,
+      "latest_input_t_s": 8.6,
+      "compute_start_s": 8.619548,
+      "compute_finished_s": 8.862869,
+      "total_compute_ms": 243.320887,
+      "available_t_s": 8.862869
+    },
+    {
+      "source_index": 55,
+      "t_s": 8.875,
+      "latest_input_t_s": 8.733333,
+      "compute_start_s": 8.862869,
+      "compute_finished_s": 9.112766,
+      "total_compute_ms": 249.897001,
+      "available_t_s": 9.112766
+    },
+    {
+      "source_index": 57,
+      "t_s": 9.125,
+      "latest_input_t_s": 9.0,
+      "compute_start_s": 9.112766,
+      "compute_finished_s": 9.368933,
+      "total_compute_ms": 256.166457,
+      "available_t_s": 9.368933
+    }
+  ],
+  "superseded_indices": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29,
+    31,
+    33,
+    35,
+    37,
+    39,
+    41,
+    43,
+    45,
+    47,
+    49,
+    51,
+    53,
+    56
+  ],
+  "performance": {
+    "source_sample_count": 58,
+    "emitted_count": 30,
+    "superseded_count": 28,
+    "retained_rate": 0.517241,
+    "observed_emission_rate_hz": 4.003471,
+    "source_realtime_budget_pass": false,
+    "total_compute_ms": {
+      "p50": 251.57886,
+      "p95": 255.122622,
+      "max": 258.550912
+    },
+    "target_lag_ms": {
+      "p50": 126.2845,
+      "p95": 192.73765,
+      "max": 243.933
+    },
+    "input_age_ms": {
+      "p50": 267.9435,
+      "p95": 332.3795,
+      "max": 379.433
+    },
+    "availability_gap_ms": {
+      "p50": 251.337,
+      "p95": 253.6934,
+      "max": 256.167
+    }
+  },
+  "integrity": {
+    "samples_sha256": "2c6e71c36745f51068b6b1b71f159400d686c417b104daed063761e672ab01e5",
+    "superseded_indices_sha256": "1c13fa0826e80874fac6d3fe0da41a998c9f3096d383c53929d6fcbff8fd1a86"
+  },
+  "limitations": [
+    "Deterministic virtual-clock projection from measured per-window latency; the model was not executed under this scheduler in wall-clock time.",
+    "Selection is score-blind and uses only causal input readiness and prior measured compute completion.",
+    "Measured compute excludes source decode, resize, causal-window assembly, camera capture, transport, display, and operating-system jitter.",
+    "Observed emission rate is not an end-to-end live-camera benchmark.",
+    "Scores remain uncalibrated evidence for human review, not driving commands."
+  ]
+}

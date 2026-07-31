@@ -1,70 +1,81 @@
 # road-risk-review case studies
 
-Public proof for road-risk-review: deterministic computer vision and reviewed
-BADAS-Open/V-JEPA 2 temporal evidence on recorded dashcam and helmet-camera
-footage. Two worked examples use publicly available YouTube clips for an
-educational research demonstration. Not ADAS. Not collision avoidance. Human
-review required.
+Public, reviewable evidence for a recorded-video road-risk analysis system. The
+lead result is a paired night-driving positive and negative control from the
+licensed Nexar Collision Prediction dataset. Both use the same pinned
+BADAS-Open/V-JEPA 2 checkpoint, causal inputs, measured NVIDIA L4 timings,
+score-blind scheduler, and frozen exploratory policy.
 
-Source and rights: [SOURCE.md](SOURCE.md). Caveats: [limitations.md](limitations.md).
+Human review required. Not ADAS, collision avoidance, or a live camera test.
 
-## Watch the evidence
+## Paired night controls
 
-### Dashcam cross-traffic conflict
+### Labeled positive: confirmation
 
-Six seconds at true speed. The learned collision-class score rises from 0.11
-and crosses the 0.80 display threshold at 32.125 s, 0.375 s before the reviewed
-32.5 s conflict. The independent deterministic CV phase crosses its moderate
-band 0.6 s before conflict.
+The raw 8 Hz attempt missed its 125 ms compute budget on all 58 samples. A
+measured-latency, latest-window virtual-clock projection emitted at 4.00 Hz.
+The frozen two-sample policy produced a confirmation at 4.13 s displayed time.
 
-https://github.com/user-attachments/assets/84d96a1d-a414-4b05-9ee4-0137d4d0b4df
+https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
 
-### Helmet-camera low-side
+[Artifacts](case-studies/nexar-night-positive-00962/) |
+[manifest](case-studies/nexar-night-positive-00962/causal_replay_manifest.json) |
+[poster](case-studies/nexar-night-positive-00962/causal_replay_poster.jpg)
 
-The learned score is already above 0.94 at the first model-covered sample. The
-video reports that sustained elevated response without turning it into a
-six-second advance-warning claim.
+### Labeled negative: false-positive confirmation
 
-https://github.com/user-attachments/assets/45bc5256-9a7d-4b79-8d50-940d4b51fb8b
+The raw 8 Hz attempt missed its 125 ms compute budget on all 71 samples. The
+same projection emitted at 4.02 Hz. The same frozen policy also confirmed this
+negative control at 4.87 s displayed time: a concrete false positive that
+prevents a safety or readiness claim.
 
-These July 31, 2026 renders contain reviewed BADAS-Open 1.0.0 inference on a
-pinned V-JEPA 2 backbone. Each clip has 49 direct predictions from causal
-16-frame contexts at 8 Hz; a second run reproduced every score exactly. The
-scores are uncalibrated, the colored heatmap remains residual optical flow,
-and BADAS never controls the deterministic CV phase labels. Exact revisions,
-input and checkpoint hashes, run IDs, sample hashes, and key-load audit are in
-each case folder.
+https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
 
-## Case studies
+[Artifacts](case-studies/nexar-night-negative-01169/) |
+[manifest](case-studies/nexar-night-negative-01169/causal_replay_manifest.json) |
+[poster](case-studies/nexar-night-negative-01169/causal_replay_poster.jpg)
 
-| Clip | Camera | Conflict | Notes |
-|------|--------|----------|-------|
-| [FD1sacdeW8E](case-studies/FD1sacdeW8E/) | Dashcam | 32.5 s | Advance warning ~0.6 s (moderate band) |
-| [PB5bNj3dzEk](case-studies/PB5bNj3dzEk/) | Helmet | 8.47 s | No isolatable advance warning; imminent window 6.47 to 8.47 s |
+| Control | Raw 8 Hz deadline result | Projected output rate | Frozen-policy result |
+|---|---:|---:|---|
+| Nexar positive `00962` | 0/58 met 125 ms | 4.00 Hz | Confirmation |
+| Nexar negative `01169` | 0/71 met 125 ms | 4.02 Hz | False-positive confirmation |
 
-Full writeup: [results.md](results.md)
+The projection is a recorded, virtual-clock counterfactual built from measured
+per-window L4 compute times. It is not wall-clock-paced inference and excludes
+camera capture, source decode, resize, causal-window assembly, display, and
+operating-system jitter. The score is uncalibrated. See
+[causal-replay-method.md](causal-replay-method.md) and
+[limitations.md](limitations.md).
 
-Each folder contains the versioned 1600x900 evidence video, a lightweight web
-encode, poster, public provenance manifest, reviewed model-evidence JSON,
-compact legacy overlay, timeline chart, sequence strip, conflict stills,
-investigation review, and redacted timing summary.
+## What is independently inspectable
 
-The players above are GitHub-native video attachments uploaded from the same
-local H.264 files stored in the case folders. The versioned copies remain
-available if an attachment URL is unavailable.
+Each Nexar case folder contains exactly seven reviewed artifacts:
 
-## Controlled scenarios
+- 1600x900 H.264 replay, 1280x720 web encode, and poster
+- Full model evidence with exact revisions, hashes, inputs, samples, repeat-run
+  result, and checkpoint-load audit
+- Raw FIFO timing trace
+- Latest-window causal projection
+- Renderer manifest binding the evidence, trace, projection, policy, and media
 
-A small deterministic scenario set is published as an evaluation aid for conflict timing and false-conflict behavior: [controlled-scenarios/](controlled-scenarios/). It is not real-world validation.
+## Historical demonstrations
 
-## Evaluation
+The `FD1sacdeW8E` and `PB5bNj3dzEk` folders are older YouTube-derived
+demonstrations. They remain available for continuity but are not the lead
+measured causal-replay evidence and do not establish live performance. Their
+rights and provenance differ from the Nexar controls. See [SOURCE.md](SOURCE.md).
 
-Regression gate for these two clips: [evaluation/verification-summary.md](evaluation/verification-summary.md)
+## Other evidence
 
-## Architecture
+- [Detailed results](results.md)
+- [Controlled deterministic scenarios](controlled-scenarios/)
+- [Historical two-clip regression summary](evaluation/verification-summary.md)
+- [Architecture](architecture-overview.md)
 
-High-level overview only: [architecture-overview.md](architecture-overview.md)
+## Source, rights, and use boundary
 
-## Terms
-
-[SOURCE.md](SOURCE.md) | [NOTICE.md](NOTICE.md)
+The Nexar-derived controls retain the Nexar Open Data License and required
+attribution. No dataset-derived material here is offered for sale or
+redistribution for profit. Commercial redistribution requires prior written
+consent from Nexar Inc. See [SOURCE.md](SOURCE.md),
+[NEXAR_DATA_LICENSE.txt](NEXAR_DATA_LICENSE.txt), and [NOTICE.md](NOTICE.md).
