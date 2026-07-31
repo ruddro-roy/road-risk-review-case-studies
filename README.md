@@ -17,7 +17,7 @@ and crosses the 0.80 display threshold at 32.125 s, 0.375 s before the reviewed
 32.5 s conflict. The independent deterministic CV phase crosses its moderate
 band 0.6 s before conflict.
 
-https://github.com/user-attachments/assets/c0017b62-6e9c-4c84-a031-f2469d5e6316
+https://github.com/user-attachments/assets/84d96a1d-a414-4b05-9ee4-0137d4d0b4df
 
 ### Helmet-camera low-side
 
@@ -25,7 +25,7 @@ The learned score is already above 0.94 at the first model-covered sample. The
 video reports that sustained elevated response without turning it into a
 six-second advance-warning claim.
 
-https://github.com/user-attachments/assets/9952ac56-e99f-443e-9c19-321f65e7cc2d
+https://github.com/user-attachments/assets/45bc5256-9a7d-4b79-8d50-940d4b51fb8b
 
 These July 31, 2026 renders contain reviewed BADAS-Open 1.0.0 inference on a
 pinned V-JEPA 2 backbone. Each clip has 49 direct predictions from causal
