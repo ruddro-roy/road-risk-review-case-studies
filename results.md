@@ -18,7 +18,7 @@ superseded 28 older ready windows without inspecting their scores, and emitted
 at 4.003 Hz. Its frozen policy first confirmed at target time 4.00 s,
 availability time 4.129 s, and 30 fps displayed time 4.133 s.
 
-https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
+https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
 
 [Replay](case-studies/nexar-night-positive-00962/causal_replay.mp4) |
 [web encode](case-studies/nexar-night-positive-00962/causal_replay_web.mp4) |
@@ -37,7 +37,7 @@ emitted at 4.021 Hz. The same frozen policy produced a false-positive
 confirmation at target time 4.75 s, availability time 4.850 s, and 30 fps
 displayed time 4.867 s.
 
-https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
+https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
 
 [Replay](case-studies/nexar-night-negative-01169/causal_replay.mp4) |
 [web encode](case-studies/nexar-night-negative-01169/causal_replay_web.mp4) |

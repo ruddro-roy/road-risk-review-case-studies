@@ -16,7 +16,7 @@ The raw 8 Hz attempt missed its 125 ms compute budget on all 58 samples. A
 measured-latency, latest-window virtual-clock projection emitted at 4.00 Hz.
 The frozen two-sample policy produced a confirmation at 4.13 s displayed time.
 
-https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
+https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
 
 [Artifacts](case-studies/nexar-night-positive-00962/) |
 [manifest](case-studies/nexar-night-positive-00962/causal_replay_manifest.json) |
@@ -29,7 +29,7 @@ same projection emitted at 4.02 Hz. The same frozen policy also confirmed this
 negative control at 4.87 s displayed time: a concrete false positive that
 prevents a safety or readiness claim.
 
-https://github.com/user-attachments/assets/ee68d1f1-ff35-4748-a135-f45fa1afffb5
+https://github.com/user-attachments/assets/7c27d5ab-f2a2-4af7-9598-0e7dea8d137d
 
 [Artifacts](case-studies/nexar-night-negative-01169/) |
 [manifest](case-studies/nexar-night-negative-01169/causal_replay_manifest.json) |
