@@ -19,7 +19,7 @@ Conflict **32.50 s** | duration **38.53 s** | peak risk **0.96** | advance ~**0.
 0.375 s before the reviewed conflict. This is an uncalibrated collision-class
 score, not a probability of real-world collision.
 
-https://github.com/user-attachments/assets/c0017b62-6e9c-4c84-a031-f2469d5e6316
+https://github.com/user-attachments/assets/84d96a1d-a414-4b05-9ee4-0137d4d0b4df
 
 [Versioned evidence video](case-studies/FD1sacdeW8E/temporal_evidence.mp4) |
 [poster](case-studies/FD1sacdeW8E/temporal_evidence_poster.jpg) |
@@ -48,7 +48,7 @@ Conflict **8.47 s** | duration **10.90 s** | peak risk **0.97**
 first model-covered sample and remains high. The score therefore supplies no
 isolatable learned onset or lead-time claim for this clip.
 
-https://github.com/user-attachments/assets/9952ac56-e99f-443e-9c19-321f65e7cc2d
+https://github.com/user-attachments/assets/45bc5256-9a7d-4b79-8d50-940d4b51fb8b
 
 [Versioned evidence video](case-studies/PB5bNj3dzEk/temporal_evidence.mp4) |
 [poster](case-studies/PB5bNj3dzEk/temporal_evidence_poster.jpg) |
