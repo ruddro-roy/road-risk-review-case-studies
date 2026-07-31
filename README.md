@@ -1,8 +1,32 @@
 # road-risk-review case studies
 
-Public proof for road-risk-review: assistive review on recorded dashcam and helmet-camera footage. Two worked examples built from publicly available YouTube clips, used for educational research demonstration only. Not ADAS. Not collision avoidance. Human review required.
+Public proof for road-risk-review: temporal evidence from recorded dashcam and
+helmet-camera footage. Two worked examples built from publicly available
+YouTube clips, used for educational research demonstration only. Not ADAS. Not
+collision avoidance. Human review required.
 
 Source and rights: [SOURCE.md](SOURCE.md). Caveats: [limitations.md](limitations.md).
+
+## Watch the evidence
+
+### Dashcam cross-traffic conflict
+
+Six seconds at true speed. The synchronized view shows residual-flow saliency,
+motion-centroid history, a fixed review corridor, measured cue channels, phase
+state, and the reviewed conflict marker.
+
+https://github.com/user-attachments/assets/c0017b62-6e9c-4c84-a031-f2469d5e6316
+
+### Helmet-camera low-side
+
+The risk begins from a sustained elevated baseline. The video therefore shows
+an imminent phase but does not invent an advance-warning claim.
+
+https://github.com/user-attachments/assets/9952ac56-e99f-443e-9c19-321f65e7cc2d
+
+These July 31, 2026 renders show measured deterministic temporal CV evidence.
+They do not claim V-JEPA/BADAS inference or model attention. Learned-model
+output will be named only after a validated run is recorded in the manifest.
 
 ## Case studies
 
@@ -13,9 +37,13 @@ Source and rights: [SOURCE.md](SOURCE.md). Caveats: [limitations.md](limitations
 
 Full writeup: [results.md](results.md)
 
-Each folder contains frame-labeled proof video (MP4 and GIF), timeline chart, sequence strip, conflict stills, investigation review, and a redacted timing summary.
+Each folder contains the versioned 1600x900 evidence video, poster, public
+provenance manifest, compact legacy overlay, timeline chart, sequence strip,
+conflict stills, investigation review, and redacted timing summary.
 
-HD proof MP4s are included. GitHub may not preview files over ~2 MB inline; download or open raw to view the full run.
+The players above are GitHub-native video attachments uploaded from the same
+local H.264 files stored in the case folders. The versioned copies remain
+available if an attachment URL is unavailable.
 
 ## Controlled scenarios
 

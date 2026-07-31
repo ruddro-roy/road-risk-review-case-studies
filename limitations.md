@@ -14,6 +14,15 @@ This is not ADAS, collision avoidance, or a substitute for driver or rider judgm
 
 **Motion flow:** Sensitive to wipers, reflections, and mount shake. Edge motion is often artifact, not a road event.
 
+**Evidence video:** The colored saliency is residual optical flow, not model
+attention. The motion-centroid trail is not an object ID. The fixed ego review
+corridor is not lane detection, path prediction, or steering guidance.
+
+**Learned temporal model:** The July 31, 2026 renders do not contain
+V-JEPA/BADAS output. BADAS-Open is an evaluation candidate, and its own model
+card notes reduced performance on rare categories including motorcycles.
+Deterministic risk values must not be described as collision probabilities.
+
 **Lane curvature:** Geometry estimate from the lower frame band. Degrades on cobblestones, markings, and shadows. Not steering angle or surveyed road geometry.
 
 **Lead proximity:** Closing proxy from object boxes or forward-region scale change. Not distance. Weak when the lead vehicle is occluded or enters from the side.

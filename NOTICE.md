@@ -12,6 +12,9 @@ Full detail: [SOURCE.md](SOURCE.md)
 
 Demo media, charts, and writeups are for viewing and citation in that educational context. Do not redistribute proof files without checking the original upload and YouTube terms.
 
-This repository does not ship runnable analysis code. Timings and labels were produced by the private road-risk-review prototype and are shown here as recorded outputs.
+This repository does not ship runnable analysis code. Timings, cue channels,
+residual-flow saliency, phase labels, and videos were produced by the private
+road-risk-review product beta and are shown here as recorded outputs. Public
+manifests state whether a learned temporal model was active.
 
 No warranty. Not for use while driving. Output requires human review.

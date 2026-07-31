@@ -1,0 +1,44 @@
+{
+  "renderer": "temporal-evidence-1.0.0",
+  "video_id": "PB5bNj3dzEk",
+  "source": "local cached source; not published by this manifest",
+  "window": {
+    "start_s": 2.467,
+    "end_s": 8.467
+  },
+  "output": {
+    "fps": 15,
+    "width": 1600,
+    "height": 900,
+    "codec": "H.264 High, yuv420p, faststart",
+    "github_attachment": {
+      "file": "temporal_evidence.mp4",
+      "size_kib": 2235
+    },
+    "website_preview": {
+      "file": "temporal_evidence_web.mp4",
+      "size_kib": 629
+    },
+    "poster": "temporal_evidence_poster.jpg"
+  },
+  "evidence_channels": [
+    "fused risk evidence",
+    "path closure",
+    "ambient cross motion",
+    "looming",
+    "visibility stress",
+    "residual optical-flow saliency",
+    "motion-component trail",
+    "incident phase"
+  ],
+  "learned_temporal_model": {
+    "active": false,
+    "reason": "No model_evidence.json supplied; no learned-model claim is shown."
+  },
+  "limitations": [
+    "Offline analysis of recorded footage.",
+    "Motion saliency is computed from optical-flow residuals, not model attention.",
+    "The ego review corridor is a fixed review region, not a predicted vehicle path.",
+    "Human review is required; this is not ADAS or collision prevention."
+  ]
+}
