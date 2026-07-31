@@ -18,10 +18,13 @@ This is not ADAS, collision avoidance, or a substitute for driver or rider judgm
 attention. The motion-centroid trail is not an object ID. The fixed ego review
 corridor is not lane detection, path prediction, or steering guidance.
 
-**Learned temporal model:** The July 31, 2026 renders do not contain
-V-JEPA/BADAS output. BADAS-Open is an evaluation candidate, and its own model
-card notes reduced performance on rare categories including motorcycles.
-Deterministic risk values must not be described as collision probabilities.
+**Learned temporal model:** The July 31, 2026 renders contain reviewed
+BADAS-Open output from a pinned V-JEPA 2 backbone. Its temperature-scaled
+collision-class score is not calibrated for these clips and must not be read
+as a real-world probability. BADAS-Open's model card notes reduced performance
+on rare categories including motorcycles. The motorcycle clip is saturated
+from the first model-covered sample, so it supports no learned onset or
+lead-time claim.
 
 **Lane curvature:** Geometry estimate from the lower frame band. Degrades on cobblestones, markings, and shadows. Not steering angle or surveyed road geometry.
 

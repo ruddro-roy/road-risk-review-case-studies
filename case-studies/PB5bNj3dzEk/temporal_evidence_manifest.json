@@ -1,5 +1,5 @@
 {
-  "renderer": "temporal-evidence-1.0.0",
+  "renderer": "temporal-evidence-2.0.0",
   "video_id": "PB5bNj3dzEk",
   "source": "local cached source; not published by this manifest",
   "window": {
@@ -13,11 +13,11 @@
     "codec": "H.264 High, yuv420p, faststart",
     "github_attachment": {
       "file": "temporal_evidence.mp4",
-      "size_kib": 2235
+      "size_kib": 2274
     },
     "website_preview": {
       "file": "temporal_evidence_web.mp4",
-      "size_kib": 629
+      "size_kib": 637
     },
     "poster": "temporal_evidence_poster.jpg"
   },
@@ -29,16 +29,28 @@
     "visibility stress",
     "residual optical-flow saliency",
     "motion-component trail",
-    "incident phase"
+    "incident phase",
+    "BADAS direct collision-class samples",
+    "bounded between-sample display interpolation",
+    "two-second causal model context"
   ],
   "learned_temporal_model": {
-    "active": false,
-    "reason": "No model_evidence.json supplied; no learned-model claim is shown."
+    "active": true,
+    "name": "BADAS-Open",
+    "version": "1.0.0",
+    "run_id": "d04950a7-0540-4aeb-b269-b623173b8d2f",
+    "review_status": "reviewed",
+    "repo_commit": "01368cf5a164a576ae46eae3baf544e4ecdb2946",
+    "checkpoint_sha256": "6b1ba91504542582412fee5100a17d6e06c87cb09619efec2efc34484f7042aa",
+    "input_sha256": "3640981525b64063be21484723860d7381ba6857984d0ecd229df4a39c0be37c",
+    "probability_semantics": "uncalibrated collision-class score",
+    "display_interpolation": "linear only between adjacent direct samples; no endpoint extrapolation"
   },
   "limitations": [
     "Offline analysis of recorded footage.",
     "Motion saliency is computed from optical-flow residuals, not model attention.",
     "The ego review corridor is a fixed review region, not a predicted vehicle path.",
+    "BADAS scores are shown as a separate learned track and never control CV phase labels.",
     "Human review is required; this is not ADAS or collision prevention."
   ]
 }

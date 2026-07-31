@@ -30,9 +30,12 @@ channels, residual optical-flow saliency, a motion-centroid trail, incident
 phase, and the reviewed conflict marker. The public manifest records which
 channels were active.
 
-**Learned-model slot** is optional. A future V-JEPA/BADAS run must enter through
-a versioned probability-curve contract. If that curve is absent, the renderer
-uses the words "fused risk evidence" and makes no learned-model claim.
+**Learned-model slot** is optional. The published cases use reviewed
+BADAS-Open inference on a pinned V-JEPA 2 backbone through a strict,
+versioned evidence contract. The contract records direct causal samples,
+model and input hashes, checkpoint loading, repeat-run integrity, and review
+status. If the file is absent or unreviewed, the renderer fails closed for a
+learned-model publication.
 
 **Output** is assistive: labeled timestamps, charts, videos, and exportable
 review artifacts. A human decides what the footage shows.
